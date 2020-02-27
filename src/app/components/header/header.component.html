@@ -1,0 +1,21 @@
+<header>
+    <div class="right-nav">
+        <div *ngFor="let game of games" class="game-placement">
+            <img src="assets/images/{{ this.game.image }}" alt="{{this.game.name}}" class="game-image">
+            <span class="game-text"> {{ this.game.name }} </span>
+        </div>
+    </div>
+
+    <div class="left-nav">
+        <div class="balance">
+            <span class="number">{{ balance }}</span>
+            <span class="currency">$</span>
+        </div>
+        <div class="profile">
+            <img src="assets/images/avatar.svg" alt="profile">
+        </div>
+        <div class="messages">
+            <img src="assets/images/message.svg" alt="profile">
+        </div>
+    </div>
+</header>
