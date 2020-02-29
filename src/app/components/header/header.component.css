@@ -6,27 +6,23 @@ header {
     display: flex;
     justify-content: space-between;
     border-bottom: 3px solid var(--color);
-    padding-top: .2em;
     background-color: #1D1E25;
 }
 
-/* right side of navigation */
-.right-nav {
+/* left side of navigation */
+.left-nav {
     display: flex;
-    background-color: transparent;
+    background-color: inherit;
 }
 
 a {
     text-decoration: none;
-    background-color: transparent;
+    background-color: inherit;
 }
-
-/* a:active {
-    background-color: red;
-} */
 
 .game-placement {
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -41,23 +37,39 @@ a {
     border-right: 1px solid rgba(255, 255, 255, .1);
 }
 
+.pointer {
+    position: absolute;
+    top: -2px;
+    background-color: var(--color);
+    height: .25em;
+    width: 3.2em;
+    border-radius: 16px;
+}
+
 .game-image {
     width: 1.5em;
     height: 1.5em;
-    padding-bottom: .25em;
+    background-color: inherit;
+    padding-bottom: .2em;
 }
 
 .game-name {
     color: #99a2ab;
     font-family: "BPG Arial", sans-serif;
     font-size: .625rem;
+    margin: .225em 0;
 }
 
-/* left side of navigation */
-.left-nav {
+.game-name-active {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+/* right side of navigation */
+.right-nav {
     display: flex;
     align-items: center;
-    background-color: transparent;
+    background-color: inherit;
 }
 
 .balance {
@@ -73,7 +85,7 @@ a {
 }
 
 .number {
-    background-color: transparent;
+    background-color: inherit;
     font-size: 1rem;
     font-weight: 700;
     color: #ffffff;
@@ -81,12 +93,13 @@ a {
 
 .currency {
     color: greenyellow;
-    background-color: transparent;
+    background-color: inherit;
 }
 
 .right-buttons-group {
     display: flex;
     justify-content: space-between;
+    background-color: inherit;
     margin-right: .6em;
 }
 

@@ -1,12 +1,13 @@
 <header>
-    <div class="right-nav">
+    <div class="left-nav">
         <a *ngFor="let game of games; let i = index" class="game-placement">
+            <div *ngIf="i == 1" class="pointer"></div>
             <img class="game-image" src="assets/images/{{ this.game.image }}" alt="{{this.game.name}}">
-            <span class="game-name"> {{ this.game.name }} </span>
+            <span class="game-name" [ngClass]="i == 1 && 'game-name-active'"> {{ this.game.name }} </span>
         </a>
     </div>
 
-    <div class="left-nav">
+    <div class="right-nav">
         <div class="balance">
             <span class="number">{{ balance.toFixed(2) }}</span>
             <span class="currency">$</span>
