@@ -21,6 +21,7 @@ a {
 }
 
 .game-placement {
+    cursor: pointer;
     display: flex;
     position: relative;
     flex-direction: column;
@@ -108,4 +109,8 @@ a {
     border-radius: 7px;
     padding: .3em;
     margin-left: .6em;
+}
+
+.popup {
+  background-color: #2e313b;
 }

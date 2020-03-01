@@ -1,9 +1,10 @@
 <header>
     <div class="left-nav">
-        <a *ngFor="let game of games; let i = index" class="game-placement">
-            <div *ngIf="i == 1" class="pointer"></div>
-            <img class="game-image" src="assets/images/{{ this.game.image }}" alt="{{this.game.name}}">
-            <span class="game-name" [ngClass]="i == 1 && 'game-name-active'"> {{ this.game.name }} </span>
+        <a *ngFor="let game of games; let i = index" class="game-placement" (mouseover)="hov = i" (mouseleave)="hov = null">
+              <div *ngIf="i == 1" class="pointer"></div>
+              <div *ngIf="i == hov" class="pointer" [ngStyle]="{backgroundColor: game.color}"></div>
+              <img class="game-image" src="assets/images/{{ this.game.image }}" alt="{{this.game.name}}">
+              <span class="game-name" [ngClass]="(i == 1 || i == hov) && 'game-name-active'"> {{ this.game.name }} </span>
         </a>
     </div>
 
@@ -13,7 +14,7 @@
             <span class="currency">$</span>
         </div>
         <div class="right-buttons-group">
-            <img class="right-button" src="assets/images/avatar.svg" alt="profile">
+            <img class="right-button" src="assets/images/profile.svg" alt="profile" (click)="openDialog()">
             <img class="right-button" src="assets/images/message.svg" alt="messages">
         </div>
     </div>
