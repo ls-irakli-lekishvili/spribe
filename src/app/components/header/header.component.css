@@ -61,7 +61,7 @@ a {
     margin: .225em 0;
 }
 
-.game-name-active {
+.game-name-active, .game-name-active-hov {
     color: #ffffff;
     font-weight: 500;
 }
@@ -107,10 +107,12 @@ a {
 .right-button {
     background-color: #373a43;
     border-radius: 7px;
-    padding: .3em;
+    padding: .35em;
+    width: 1.85em;
+    height: 1.85em;
     margin-left: .6em;
 }
 
-.popup {
-  background-color: #2e313b;
-}
+/*.popup {*/
+/*  background-color: #2e313b;*/
+/*}*/

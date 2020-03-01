@@ -3,9 +3,10 @@
         <a *ngFor="let game of games; let i = index" class="game-placement" (click)="changeColor(i)"
            [routerLink]="[game.url]" (mouseover)="hov = i" (mouseleave)="hov = null">
               <div routerLinkActive="pointer"></div>
-               <div *ngIf="i == hov" class="pointer" [ngStyle]="{backgroundColor: game.color}"></div>
+              <div *ngIf="i == hov" class="pointer" [ngStyle]="{backgroundColor: game.color}"></div>
               <img class="game-image" src="assets/images/{{ this.game.image }}" alt="{{this.game.name}}">
-              <span class="game-name" [ngClass]="(i == 1 || i == hov) && 'game-name-active'"> {{ this.game.name }} </span>
+              <span class="game-name" routerLinkActive='game-name-active'
+                    [ngClass]="i == hov && 'game-name-active-hov'"> {{ this.game.name }} </span>
         </a>
     </div>
 

@@ -19,7 +19,14 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.games = this.data.games;
     this.balance = 10000;
-    document.documentElement.style.setProperty('--color' ,  this.games[0].color);
+    this. setTheme();
+    console.log(this.games);
+  }
+
+  setTheme() {
+    const url: string = document.URL;
+    this.games
+      .map((game, index) => (url.match(new RegExp(game.name, 'i')) || []).length && this.changeColor(index));
   }
 
   openDialog(): void {
