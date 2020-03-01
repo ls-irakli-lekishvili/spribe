@@ -19,10 +19,10 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.games = this.data.games;
     this.balance = 10000;
-    document.documentElement.style.setProperty('--color' ,  this.games[1].color);
+    document.documentElement.style.setProperty('--color' ,  this.games[0].color);
   }
 
-  openDialog() {
+  openDialog(): void {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;
@@ -34,4 +34,7 @@ export class HeaderComponent implements OnInit {
     this.dialog.open(ProfilePopUpComponent, dialogConfig);
   }
 
+  changeColor(index): void {
+    document.documentElement.style.setProperty('--color' ,  this.games[index].color);
+  }
 }
