@@ -20,14 +20,14 @@ export class HeaderComponent implements OnInit {
     this.games = this.data.games;
     this.balance = 10000;
     this. setTheme();
-    console.log(this.games);
   }
 
   setTheme() {
     const url: string = document.URL;
-    this.games
-      .map((game, index) => (url.match(new RegExp(game.name, 'i')) || []).length && this.changeColor(index));
-  }
+    let res = this.games
+      .map((game, index) => (url.match(new RegExp(`${ game.name }`, 'i')) || []).length && this.changeColor(index));
+    !res.some(e => e == undefined) && this.changeColor(0);
+    }
 
   openDialog(): void {
     const dialogConfig = new MatDialogConfig();
@@ -41,7 +41,7 @@ export class HeaderComponent implements OnInit {
     this.dialog.open(ProfilePopUpComponent, dialogConfig);
   }
 
-  changeColor(index): void {
+  changeColor(index: number) {
     document.documentElement.style.setProperty('--color' ,  this.games[index].color);
   }
 }
