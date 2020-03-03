@@ -1,7 +1,35 @@
-.stats-tabs {
-    background-color: thistle;
+main {
+  color: white;
+  width: 940px;
+  margin: auto;
 }
 
-.main-tabs {
-    background-color: trasnparent;
+.stats-table {
+  display: flex;
+  justify-content: center;
+}
+
+.current-bet, .top-wins {
+  margin: 1em 2em;
+  font-size: 1rem;
+  color: #cccccc;
+}
+
+.active, .current-bet:hover, .top-wins:hover {
+  color: white;
+  border-bottom: 2px solid white;
+  cursor: pointer;
+}
+
+.bet-stats-row-header {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(0, 0, 0, 0.85);
+  font-size: .75rem;
+  border-radius: 10px;
+}
+
+.table-col {
+  padding: 1.125em;
+  text-align: center;
 }

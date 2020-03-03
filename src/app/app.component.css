@@ -1,5 +1,16 @@
-.router-outlet {
-    display: flex;
-    justify-content: center;
-    padding-top: 1.125em;
+app-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
+
+.router-outlet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 4.5em 0;
+}
+
+/*app-bet-stats {*/
+/*  */
+/*}*/

@@ -1,0 +1,14 @@
+.bet-stats-row {
+  display: flex;
+  justify-content: space-around;
+  background: #21222a;
+  border-radius: 6px;
+  margin-bottom: .2em;
+  border-left: 4px solid #26a52b;
+  cursor: pointer;
+}
+
+.player-avatar {
+  width: 30px;
+  height: 30px;
+}

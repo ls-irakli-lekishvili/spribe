@@ -15,7 +15,7 @@ export class TopWinsService {
     this.generateDummyData(),
     this.generateDummyData(),
     this.generateDummyData()
-  ]
+  ];
 
   // this will be sent from server and bellow functions are unnecessary
 
@@ -27,6 +27,7 @@ export class TopWinsService {
     data['bet'] = this.bet();
     data['result'] = this.multiplier();
     data['win'] = this.win(data);
+    data['avatar'] = 'assets/images/av-2.png';
     return data;
   }
 
