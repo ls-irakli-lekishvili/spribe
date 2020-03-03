@@ -1,11 +1,15 @@
 .bet-stats-row {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 0.3fr;
   background: #21222a;
   border-radius: 6px;
   margin-bottom: .2em;
   border-left: 4px solid #26a52b;
   cursor: pointer;
+}
+
+.table-col-data {
+  margin: .4em;
 }
 
 .player-avatar {

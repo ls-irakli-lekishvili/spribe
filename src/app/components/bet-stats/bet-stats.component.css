@@ -22,14 +22,15 @@ main {
 }
 
 .bet-stats-row-header {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr .3fr;
   background-color: rgba(0, 0, 0, 0.85);
   font-size: .75rem;
   border-radius: 10px;
 }
 
 .table-col {
-  padding: 1.125em;
-  text-align: center;
+  text-align: left;
+  padding: 1em;
 }
