@@ -18,6 +18,7 @@ export class CurrentBetsService {
     this.generateDummyData(),
     this.generateDummyData(),
     this.generateDummyData(),
+    this.generateDummyData(),
 
   ];
 

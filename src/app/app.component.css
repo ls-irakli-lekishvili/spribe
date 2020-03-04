@@ -2,6 +2,7 @@ app-header {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 1000;
 }
 
 .router-outlet {
@@ -10,7 +11,3 @@ app-header {
   align-items: center;
   margin: 4.5em 0;
 }
-
-/*app-bet-stats {*/
-/*  */
-/*}*/

@@ -41,36 +41,46 @@ main {
   margin-left: 1.2em;
 }
 
-.container {
-  height: 445px;
-  overflow: hidden;
+.border {
   position: relative;
-  top: 0;
-  transform: translateY(300px) ;
-  transition: transform 5s;
-  /*animation: move 5s ease-in;*/
+  height: 450px;
+  overflow: hidden;
+ }
 
-}
+.container {
+  height: auto;
+  position:absolute;
+  bottom: 0;
+  animation: move 1s;
+  animation-fill-mode: forwards;
+  /* position: relative;*/
+ /* transform: translateY(-3em);*/
+ /* transition: all .5s linear;*/
+ }
 
-/*.container.down {*/
+/*.slide-bottom {*/
+/*  position: relative;*/
+/*  !*animation-iteration-count: infinite;*!*/
+/*  !*-moz-animation-iteration-count: infinite;*!*/
+/*  !*-webkit-animation-iteration-count: infinite;*!*/
+/*  !*-o-animation-iteration-count: infinite;*!*/
 
 /*}*/
 
-.slide-bottom {
-
-  /*animation-iteration-count: infinite;*/
-  /*-moz-animation-iteration-count: infinite;*/
-  /*-webkit-animation-iteration-count: infinite;*/
-  /*-o-animation-iteration-count: infinite;*/
-
-}
-
 @-webkit-keyframes move {
-  from {top: -30em;}
-  to {top: 0;}
+  0% {
+    transform: translateY(-3em);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 @keyframes move {
-  from {top: -30em;}
-  to {top: 0;}
+  0% {
+    transform: translateY(-6em);
+  }
+  100% {
+    transform: translateY(-3em);
+  }
 }

@@ -13,10 +13,12 @@
   </div>
 
   <div *ngIf="currentPage">
-    <div class="container down">
+    <div class="border">
+    <div class="container" id="container" [ngStyle]="test && {top: '3em'}">
       <div *ngFor="let currentBet of currentBets">
-        <app-user [data]="currentBet" [ngClass]="{'slide-bottom': test}"></app-user>
+        <app-user [data]="currentBet"></app-user>
       </div>
+    </div>
     </div>
   </div>
 
@@ -27,3 +29,5 @@
   </div>
 
 </main>
+
+<button (click)="addElement()">adden</button>

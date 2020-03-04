@@ -14,7 +14,6 @@ export class BetStatsComponent implements OnInit {
     topWins: TopWins[];
     test: boolean = true;
     currentPage: boolean = true;
-    interval: any;
 
     constructor(
         public winData: TopWinsService,
@@ -25,25 +24,26 @@ export class BetStatsComponent implements OnInit {
     ngOnInit(): void {
         this.topWins = this.winData.topWins;
         this.currentBets = this.betData.currentBets;
-        this.getLastElement();
+        // this.addElement();
     }
 
     activeTab(firstTab: boolean) {
         this.currentPage = firstTab;
-        if (!firstTab) {
-            clearInterval(this.interval);
-        } else {
-            this.getLastElement();
-        }
     }
 
-    getLastElement() {
-            // this.interval = setInterval(() => {
-            //         this.currentBets.unshift(this.currentBets[(Math.random() * 10) << 0]);
-            //         this.currentBets = this.currentBets.splice(0, 10);
-            //         this.test = true;
-            //     },
-            //     1000);
+    // getS() {
+    // }
+
+    addElement() {
+    //   setInterval(() => {
+        this.currentBets.unshift(this.currentBets[this.currentBets.length - 1]);
+        this.currentBets.pop();
+    //     this.addClass();
+    //   }, 1000);
     }
 
+    // addClass() {
+    //   document.getElementById('container').style.animation = 'move 1s infinite';
+    //   document.getElementById('container').style.animationFillMode = 'infinite';
+    // }
 }
