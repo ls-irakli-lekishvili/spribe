@@ -1,26 +1,29 @@
 <main>
   <div class="stats-table">
-    <span class="current-bet" [ngClass]="{ 'active' : currentBet }" (click)="activeTab(true)">CURRENT BETS</span>
-    <span class="top-wins" [ngClass]="{ 'active' : !currentBet }" (click)="activeTab(false)">TOP WINS</span>
+    <span class="current-bet" [ngClass]="{ 'active' : currentPage }" (click)="activeTab(true)">CURRENT BETS</span>
+    <span class="top-wins" [ngClass]="{ 'active' : !currentPage }" (click)="activeTab(false)">TOP WINS</span>
   </div>
   <div class="bet-stats-row-header">
     <span class="table-col">Game</span>
-    <span class="table-col">Player</span>
+    <span class="table-col player">Player</span>
     <span class="table-col">Bet</span>
     <span class="table-col">Result</span>
     <span class="table-col">Win</span>
     <span class="table-col"></span>
   </div>
 
-  <div *ngIf="currentBet">
-    <div *ngFor="let topWin of topWins" class="bet-stats-row">
-      <app-user [topWin]="topWin"></app-user>
+  <div *ngIf="currentPage">
+    <div class="container down">
+      <div *ngFor="let currentBet of currentBets">
+        <app-user [data]="currentBet" [ngClass]="{'slide-bottom': test}"></app-user>
+      </div>
     </div>
   </div>
 
-  <div *ngIf="!currentBet">
+  <div *ngIf="!currentPage">
     <div *ngFor="let topWin of topWins">
-      <app-user [topWin]="topWin"></app-user>
+      <app-user [data]="topWin"></app-user>
     </div>
   </div>
+
 </main>

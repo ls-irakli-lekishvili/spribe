@@ -9,7 +9,7 @@ import {HeaderGameDataService} from '../../../services/header-game-data.service'
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  @Input() topWin: TopWins;
+  @Input() data: TopWins;
   game: Game[];
   constructor(public gameData: HeaderGameDataService) { }
 
@@ -20,8 +20,8 @@ export class UserComponent implements OnInit {
 
   // adds indexes to find pictures of game easily
   addIndexes() {
-    this.topWin['index'] = this.game
-        .findIndex(el => el.name === this.topWin.game);
+    this.data['index'] = this.game
+        .findIndex(el => el.name === this.data.game);
   }
 
 }

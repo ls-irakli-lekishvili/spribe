@@ -1,7 +1,8 @@
 main {
   color: white;
-  width: 940px;
+  width: 50%;
   margin: auto;
+  user-select: none;
 }
 
 .stats-table {
@@ -25,12 +26,51 @@ main {
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr .3fr;
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(0, 0, 0, 0.4);
   font-size: .75rem;
   border-radius: 10px;
+  color: #b0bbc8;
 }
 
 .table-col {
   text-align: left;
-  padding: 1em;
+  padding: 1em 1.5em;
+}
+
+.player {
+  margin-left: 1.2em;
+}
+
+.container {
+  height: 445px;
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  transform: translateY(300px) ;
+  transition: transform 5s;
+  /*animation: move 5s ease-in;*/
+
+}
+
+/*.container.down {*/
+
+/*}*/
+
+.slide-bottom {
+
+  /*animation-iteration-count: infinite;*/
+  /*-moz-animation-iteration-count: infinite;*/
+  /*-webkit-animation-iteration-count: infinite;*/
+  /*-o-animation-iteration-count: infinite;*/
+
+}
+
+@-webkit-keyframes move {
+  from {top: -30em;}
+  to {top: 0;}
+}
+
+@keyframes move {
+  from {top: -30em;}
+  to {top: 0;}
 }

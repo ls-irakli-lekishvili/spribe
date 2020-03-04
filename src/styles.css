@@ -14,5 +14,5 @@
 
 body {
     height: 10000px; /* remove later */
-    background-image: radial-gradient(circle at 48% 35%,rgba(20,88,146,.5),rgba(0,0,0,.5)),linear-gradient(to bottom,#000,#000)
+    background-image: radial-gradient(circle at 48% 35%,rgba(20,88,146,.5),rgba(0,0,0,.5)),linear-gradient(to bottom,#000,#000);
 }

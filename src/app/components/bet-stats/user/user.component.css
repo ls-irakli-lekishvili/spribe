@@ -9,10 +9,65 @@
 }
 
 .table-col-data {
-  margin: .4em;
+  display: flex;
+  align-items: center;
+  margin: .33em 0 .33em .6em;
+  padding: .35em 0;
+  font-size: .75rem;
+}
+
+.game-image, .player-avatar {
+  margin: 0 .6em 0 .2em;
+}
+
+.game-name, .player-name {
+  margin: 0 .6em 0 .2em;
+}
+
+.player-name {
+  font-size: .78rem;
+  color: #b9d5df;
 }
 
 .player-avatar {
   width: 30px;
   height: 30px;
+}
+
+.bet {
+  color: #b0bbc8;
+  font-weight: 700;
+  font-size: .82rem;
+}
+
+.result {
+  margin-left: .5em;
+  padding: .2em .8em;
+  border-radius: 15px;
+}
+
+.win {
+  color: rgb(126, 211, 33);
+  font-weight: 700;
+}
+
+.no-win {
+  color: rgb(176, 187, 200);
+  font-weight: 700;
+}
+
+.l {
+  background-image: linear-gradient(221deg,#252525 0,#313131 100%);
+}
+
+.s {
+  background-image: linear-gradient(-180deg,rgba(15,17,22,0) 0,#0f1116 100%);
+}
+
+.m {
+  background-image: linear-gradient(208deg, #c356fc 0, #902bf8 100%);;
+}
+
+.b {
+  background-image: linear-gradient(197deg,#f31f8e 0,#e20d55 100%);;
 }
