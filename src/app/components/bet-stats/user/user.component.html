@@ -1,15 +1,20 @@
-<div class="bet-stats-row">
+<div class="bet-stats-row" *ngIf="data" [style.borderLeft]="'4px solid '+ data.color ">
   <div class="table-col-data">
     <img src="assets/images/{{ game[data.index].image }}" alt="game" class="game-image">
     <span class="game-name">{{data.game}}</span>
   </div>
+
   <div class="table-col-data">
     <img src="{{ data.avatar }}" alt="avatar" class="player-avatar">
     <span class="player-name">{{ data.player }}</span>
   </div>
+
   <span class="table-col-data bet">{{ data.bet }} $</span>
   <div class="table-col-data">
-    <span class="result m">{{ data.result }}x</span>
+    <span class="result l"
+        [ngClass]="{ 's': data.result > 1 && data.result <= 2, 'm': data.result > 2 && data.result <= 4, 'b': data.result > 4}">
+      {{ data.result }}x
+    </span>
   </div>
   <span class="table-col-data win">{{ data.win }} $</span>
   <img src="assets/images/watermark.svg" alt="verified" class="table-col-data verified">

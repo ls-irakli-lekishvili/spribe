@@ -4,46 +4,64 @@ import {TopWins} from 'src/app/interfaces/top-wins';
 import {CurrentBetsService} from '../../services/current-bets.service';
 
 @Component({
-    selector: 'app-bet-stats',
-    templateUrl: './bet-stats.component.html',
-    styleUrls: ['./bet-stats.component.css']
+  selector: 'app-bet-stats',
+  templateUrl: './bet-stats.component.html',
+  styleUrls: ['./bet-stats.component.css'],
 })
+
 export class BetStatsComponent implements OnInit {
 
-    currentBets: TopWins[];
-    topWins: TopWins[];
-    test: boolean = true;
-    currentPage: boolean = true;
+  currentBets: TopWins[];
+  topWins: TopWins[];
+  currentPage: boolean = true;
+  interval;
 
-    constructor(
-        public winData: TopWinsService,
-        public betData: CurrentBetsService
-    ) {
+  constructor(
+    public winData: TopWinsService,
+    public betData: CurrentBetsService
+  ) {
+  }
+
+  ngOnInit(): void {
+    this.topWins = this.winData.topWins;
+    this.currentBets = this.betData.currentBets;
+    this.adding();
+  }
+
+  activeTab(firstTab: boolean) {
+    this.currentPage = firstTab;
+    if (!firstTab) {
+      clearInterval(this.interval);
+    } else {
+      this.adding();
     }
+  }
 
-    ngOnInit(): void {
-        this.topWins = this.winData.topWins;
-        this.currentBets = this.betData.currentBets;
-        // this.addElement();
+// will be replaced with service
+  adding() {
+    this.interval = setInterval(() => {
+      this.addElement();
+    }, 1500);
+  }
+
+  addElement() {
+    this.currentBets.unshift(this.currentBets[this.currentBets.length - 1]);
+    this.currentBets.pop();
+    this.addClass();
+    setTimeout(() => this.removeClass(), 1000);
+  }
+
+  addClass() {
+    const element = document.getElementById('container');
+    if (element) {
+      element.style.animation = 'move 1100ms';
     }
+  }
 
-    activeTab(firstTab: boolean) {
-        this.currentPage = firstTab;
+  removeClass() {
+    const element = document.getElementById('container');
+    if (element) {
+      element.style.animation = null;
     }
-
-    // getS() {
-    // }
-
-    addElement() {
-    //   setInterval(() => {
-        this.currentBets.unshift(this.currentBets[this.currentBets.length - 1]);
-        this.currentBets.pop();
-    //     this.addClass();
-    //   }, 1000);
-    }
-
-    // addClass() {
-    //   document.getElementById('container').style.animation = 'move 1s infinite';
-    //   document.getElementById('container').style.animationFillMode = 'infinite';
-    // }
+  }
 }

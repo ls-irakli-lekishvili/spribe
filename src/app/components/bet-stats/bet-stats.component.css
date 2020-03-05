@@ -42,30 +42,9 @@ main {
 }
 
 .border {
-  position: relative;
   height: 450px;
   overflow: hidden;
  }
-
-.container {
-  height: auto;
-  position:absolute;
-  bottom: 0;
-  animation: move 1s;
-  animation-fill-mode: forwards;
-  /* position: relative;*/
- /* transform: translateY(-3em);*/
- /* transition: all .5s linear;*/
- }
-
-/*.slide-bottom {*/
-/*  position: relative;*/
-/*  !*animation-iteration-count: infinite;*!*/
-/*  !*-moz-animation-iteration-count: infinite;*!*/
-/*  !*-webkit-animation-iteration-count: infinite;*!*/
-/*  !*-o-animation-iteration-count: infinite;*!*/
-
-/*}*/
 
 @-webkit-keyframes move {
   0% {
@@ -78,9 +57,9 @@ main {
 
 @keyframes move {
   0% {
-    transform: translateY(-6em);
+    transform: translateY(-3em);
   }
   100% {
-    transform: translateY(-3em);
+    transform: translateY(0);
   }
 }

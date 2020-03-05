@@ -4,13 +4,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ProfilePopUpComponent } from './components/profile-pop-up/profile-pop-up.component';
 import { BetStatsComponent } from './components/bet-stats/bet-stats.component';
 import { UserComponent } from './components/bet-stats/user/user.component';
+
 
 @NgModule({
   declarations: [
