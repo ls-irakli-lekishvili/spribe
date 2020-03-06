@@ -1,6 +1,6 @@
 .bet-stats-row {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 0.3fr;
+  grid-template-columns: repeat(5, 1fr) 0.3fr;
   background: #21222a;
   border-radius: 6px;
   margin-bottom: .2em;
@@ -69,4 +69,28 @@
 
 .b {
   background-image: linear-gradient(197deg,#f31f8e 0,#e20d55 100%);;
+}
+
+@media only screen and (max-width: 1070px) {
+  img  {
+    width: 10px;
+  }
+
+  .bet-stats-row {
+    grid-template-columns: 1.3fr repeat(3, 1fr);
+
+  }
+
+  .verified {
+    display: none;
+  }
+
+  .player-name {
+    font-size: .5rem;
+  }
+
+  .player {
+    display: none;
+  }
+
 }

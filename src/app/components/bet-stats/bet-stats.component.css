@@ -1,6 +1,6 @@
 main {
+  width: 940px;
   color: white;
-  width: 50%;
   margin: auto;
   user-select: none;
 }
@@ -25,7 +25,7 @@ main {
 .bet-stats-row-header {
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr .3fr;
+  grid-template-columns: repeat(5, 1fr) .3fr;
   background-color: rgba(0, 0, 0, 0.4);
   font-size: .75rem;
   border-radius: 10px;
@@ -42,9 +42,9 @@ main {
 }
 
 .border {
-  height: 450px;
+  height: 447px;
   overflow: hidden;
- }
+}
 
 @-webkit-keyframes move {
   0% {
@@ -61,5 +61,54 @@ main {
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+@media only screen and (max-width: 1070px) {
+  main {
+    width: 100%;
+  }
+
+  .current-bet, .top-wins {
+    margin: .5em 1em;
+    font-size: .5rem;
+    color: #cccccc;
+  }
+
+  .table-col {
+    align-items: center;
+  }
+
+  .player {
+    display: none;
+  }
+
+  .last {
+    display: none;
+  }
+
+  .bet-stats-row-header {
+    grid-template-columns: 1.5fr repeat(3, 1.2fr);
+  }
+
+  .border {
+    height: 400px;
+  }
+
+  .stats-table {
+    padding-bottom: 1em;
+  }
+
+  .current-bet, .top-wins {
+    font-size: 1rem;
+  }
+
+  @keyframes move {
+    0% {
+      transform: translateY(-2.2em);
+    }
+    100% {
+      transform: translateY(0);
+    }
   }
 }

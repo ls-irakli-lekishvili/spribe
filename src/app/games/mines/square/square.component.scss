@@ -1,0 +1,60 @@
+img {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.image-background {
+  background-color: #498CC8;
+}
+
+// flip card animation
+
+.flip-card {
+  width: 70px;
+}
+
+.flip-card-inner {
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.flip-card_active .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+// image backgrounds
+.explode {
+  background-image: radial-gradient(circle at 74% 73%,#e07a9b,#f990bb);
+}
+
+.pressed {
+  background-image: radial-gradient(circle at 74% 90%,#f79a0f,#f9b519);
+}
+
+
+@media only screen and (max-width: 1070px) {
+  img {
+    width: 60px;
+    height: 60px;
+  }
+
+
+  .flip-card {
+    width: 60px;
+  }
+
+}

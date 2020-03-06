@@ -1,0 +1,14 @@
+footer {
+  text-align: center;
+  margin: .6em 0;
+}
+
+a {
+  font-size: .8rem;
+  text-decoration: none;
+  color: #b0bbc8;
+}
+
+a:hover {
+  color: white;
+}

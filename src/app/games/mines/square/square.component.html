@@ -1,0 +1,8 @@
+<div class="flip-card" [ngClass]="{'flip-card_active':square.pressed}">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src={{square.image}}
+           [ngClass]="square.handPressed === 2? 'pressed': square.handPressed === 1? 'explode':'image-background'">
+    </div>
+  </div>
+</div>

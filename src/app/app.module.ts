@@ -10,6 +10,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ProfilePopUpComponent } from './components/profile-pop-up/profile-pop-up.component';
 import { BetStatsComponent } from './components/bet-stats/bet-stats.component';
 import { UserComponent } from './components/bet-stats/user/user.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { UserComponent } from './components/bet-stats/user/user.component';
     HeaderComponent,
     ProfilePopUpComponent,
     BetStatsComponent,
-    UserComponent
+    UserComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

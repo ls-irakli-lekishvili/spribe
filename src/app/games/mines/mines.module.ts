@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MinesComponent } from './mines.component';
 import {RouterModule} from '@angular/router';
+import {BoardComponent} from './board/board.component';
+import { SquareComponent } from './square/square.component';
 
 const routes = [
-  { path: '', component: MinesComponent }
+  { path: '', component: BoardComponent }
 ];
 
 @NgModule({
-  declarations: [MinesComponent],
+  declarations: [BoardComponent, SquareComponent],
   imports: [
     RouterModule.forChild(routes),
     CommonModule

@@ -3,6 +3,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Game } from '../../interfaces/game';
 import { HeaderGameDataService } from 'src/app/services/header-game-data.service';
 import { ProfilePopUpComponent } from '../profile-pop-up/profile-pop-up.component';
+import {MoneyService} from '../../services/money.service';
 
 @Component({
   selector: 'app-header',
@@ -11,14 +12,17 @@ import { ProfilePopUpComponent } from '../profile-pop-up/profile-pop-up.componen
 })
 export class HeaderComponent implements OnInit {
   games: Game[];
-  balance: number;
+  balance: number = 1000;
   hov: number;
 
-  constructor(private data: HeaderGameDataService, private dialog: MatDialog) { }
+  constructor(private data: HeaderGameDataService,
+              private dialog: MatDialog,
+              private money: MoneyService
+              ) { }
 
   ngOnInit(): void {
     this.games = this.data.games;
-    this.balance = 10000;
+    console.log(this.money);
     this. setTheme();
   }
 

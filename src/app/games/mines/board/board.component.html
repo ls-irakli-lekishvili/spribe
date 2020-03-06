@@ -1,0 +1,70 @@
+<main>
+  <ng-container class="outter-container">
+    <aside>
+      <div class="container-money">
+        <div class="money-box">
+          <label>
+            <span class="box-header">Bet amount $</span>
+          </label>
+          <div class="button-input-union">
+            <img src="assets/images/minus.svg" class="mp-button" (mousedown)="mpButton('-', true)"
+                 (mouseup)="stopIncrease()" (mouseout)="stopIncrease()">
+            <input type="number" maxlength="6" [disabled]="betClicked" value="{{moneyInput}}" step="any"
+                   class="money-input" (change)="valueHandler($event.target.value)">
+            <img src="assets/images/plus.svg" class="mp-button" (mousedown)="mpButton('+', true)"
+                 (mouseup)="stopIncrease()" (mouseout)="stopIncrease()">
+          </div>
+        </div>
+        <div class="money-increment">
+          <button class="money-button" [disabled]="betClicked" (click)="fastAddMoney(1)">1$</button>
+          <button class="money-button" [disabled]="betClicked" (click)="fastAddMoney(2)">2$</button>
+          <button class="money-button" [disabled]="betClicked" (click)="fastAddMoney(5)">5$</button>
+          <button class="money-button" [disabled]="betClicked" (click)="fastAddMoney(10)">10$</button>
+        </div>
+      </div>
+
+      <div class="container-bomb">
+        <div class="second-header">
+          <span class="box-header">Number of mines(1-20)</span>
+        </div>
+        <div class="bomb-box">
+          <button class="mines-button" [disabled]="betClicked" (click)="setBomb(1)">1</button>
+          <button class="mines-button" [disabled]="betClicked" (click)="setBomb(3)">3</button>
+          <button class="mines-button" [disabled]="betClicked" (click)="setBomb(4)">4</button>
+          <div class="button-input-union">
+            <img src="assets/images/minus.svg" class="mp-button" (mousedown)="mpButton('-', false)"
+                 (mouseup)="stopIncrease()" (mouseout)="stopIncrease()">
+            <input type="number" maxlength="3" [disabled]="betClicked" value="{{bombInput}}"
+                   class="bomb-input" (change)="bombHandler($event.target.value)">
+            <img src="assets/images/plus.svg" class="mp-button" (mousedown)="mpButton('+', false)"
+                 (mouseup)="stopIncrease()" (mouseout)="stopIncrease()">
+          </div>
+          <button class="mines-button" [disabled]="betClicked" (click)="setBomb(7)">7</button>
+          <button class="mines-button" [disabled]="betClicked" (click)="setBomb(9)">9</button>
+          <button class="mines-button" [disabled]="betClicked" (click)="setBomb(15)">15</button>
+        </div>
+      </div>
+
+      <button class="bet" [ngStyle]="betClicked && {'background-image': 'linear-gradient(86deg,#f6730f,#fa931c)'}"
+              (click)="gameOn()" [disabled]="firstMove">
+        <span *ngIf="!betClicked">BET</span>
+        <span *ngIf="betClicked">CASHOUT {{ currentWin.toFixed(2) }}$</span>
+      </button>
+      <button class="random-open" [disabled]="!betClicked" (click)="openRandomly()">OPEN RANDOMLY</button>
+    </aside>
+
+    <div class="section">
+      <div class="board-header">
+        <ng-container *ngIf="betClicked">
+          <span class="stars-count">Stars opened: {{ starsOpened }} / {{ allStars }}</span>
+          <span> <div class="next-win"> Next tile: {{ nextWin.toFixed(2) }} $ </div></span>
+        </ng-container>
+      </div>
+      <div class="square-positioning">
+        <div *ngFor="let obj of squares; let i = index">
+          <app-square (click)="clickHandler(i)" [square]="obj" class="position"></app-square>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</main>
