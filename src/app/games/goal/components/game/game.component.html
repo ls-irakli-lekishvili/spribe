@@ -1,0 +1,22 @@
+<div class="container">
+  <div id="ball" [ngStyle]="stage <= 1 && {'visibility' : 'hidden'}"></div>
+  <div class="game-container" #gameContainer>
+    <div class="boxes" *ngFor="let i of width; let ii = index" #drag>
+      <ng-container *ngFor="let j of height; let k = index">
+        <div
+          [ngClass]="{
+                        'small-box': variable == 4,
+                        'medium-box': variable == 7,
+                        'large-box': variable == 10,
+                        'activeWindow' : stage == ii + 1
+                    }"
+          id="{{ k + 1 + this.height.length * ii }}"
+          (click)="onBoxClick($event)"
+        >
+          <div class="child-box"></div>
+        </div>
+      </ng-container>
+      <p class="multiplier">{{ multiplier[ii] }}x</p>
+    </div>
+  </div>
+</div>

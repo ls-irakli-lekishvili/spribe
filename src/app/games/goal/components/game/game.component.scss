@@ -1,0 +1,148 @@
+.container {
+  display: inline-flex;
+//padding: 10px;
+  position: relative;
+}
+.game-container {
+  display: inline-flex;
+}
+.boxes {
+  cursor: default;
+//display: grid;
+  justify-content: center;
+}
+.small-box {
+  box-shadow: 2px 2px 0 0 rgba(33, 58, 4, 0.6);
+  border-radius: 4px;
+  margin-top: 5px;
+  background-color: rgba(133, 171, 107, 1);
+  width: 78px;
+  height: 78px;
+  margin-left: 3px;
+  z-index: 10;
+  display: flex;
+}
+
+.medium-box {
+  width: 64px;
+  height: 64px;
+  margin-left: 3px;
+  z-index: 10;
+  box-shadow: 2px 2px 0 0 rgba(33, 58, 4, 0.6);
+  border-radius: 4px;
+  margin-top: 5px;
+  padding: 5px;
+//background-color: rgba(133, 171, 107, 1);
+  display: flex;
+  background-image: radial-gradient(circle at 80% 150%,rgba(215,230,203,.41) 73%,rgba(203,227,192,.41) 100%);
+
+}
+.large-box {
+  width: 55px;
+  height: 55px;
+  margin-left: 3px;
+  z-index: 10;
+  box-shadow: 2px 2px 0 0 rgba(33, 58, 4, 0.6);
+  border-radius: 4px;
+  margin-top: 5px;
+  background-color: rgba(133, 171, 107, 1);
+  display: flex;
+}
+
+.box-win {
+  background-image: radial-gradient(circle at 80% 150%,#d7e6cb 73%,#cbe3c0 100%);
+}
+.box-win1 {
+  background: white;
+  border-radius: 50%;
+  width: 35%;
+  height: 35%;
+  margin: auto;
+//transition: .3s;
+}
+
+.box-lose {
+  background-image: url(../../../../../assets/goal/images/bomb.svg);
+  width: 50%;
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: auto;
+  background-size: 98%;
+//z-index: 20;
+}
+.box-lose-pink {
+  background-image: radial-gradient(circle at 80% 150%,#ffd5d5 73%,#ffc1c1 100%);
+}
+.bomb-detonation {
+  background-image: url(../../../../../assets/goal/images/bomb_detonation.svg);
+  background-size: 50%;
+  width: 100%;
+  height: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+//z-index: 20;
+}
+.activeWindow {
+  background: white;
+}
+.multiplier {
+  color: white;
+  text-align: center;
+  font-size: 12px
+}
+#ball {
+  transform: translate3d(0px, 0px, 0);
+  transition: transform .2s cubic-bezier(.86,.46,.37,.65);
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-image: url(../../../../../assets/goal/images/ball.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  visibility: visible;
+}
+
+@media only screen and (max-width: 600px) {
+  .small-box {
+    width: 74px;
+    height: 80px;
+  }
+  .medium-box {
+    width: 37px;
+    height: 58px;
+  }
+  .large-box {
+    width: 26px;
+    height: 46px;
+  }
+  #ball {
+    width: 22px;
+    height: 22px;
+  }
+  .box-win1 {
+    background: white;
+    border-radius: 50%;
+    width: 25%;
+    height: 25%;
+    margin: auto;
+  //transition: .3s;
+  }
+  .multiplier {
+    color: white;
+    text-align: center;
+    font-size: 8px
+  }
+
+}
+
+
+@keyframes bomb {
+  0% {
+    transform: scale(.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

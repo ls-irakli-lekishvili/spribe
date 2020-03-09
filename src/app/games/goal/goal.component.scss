@@ -1,0 +1,27 @@
+body {
+  background-color: black;
+}
+
+.container {
+  display: flex;
+  max-width: 1000px;
+  min-width: 320px;
+  height: 570px;
+  border-radius: 10px;
+  padding: 10px;
+  background-image: radial-gradient(
+    80% 100% at center 100%,
+    rgba(107, 184, 0, 0.85),
+    #295120
+  );
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  justify-content: space-around;
+}
+@media only screen and (max-width: 1024px) {
+  .container {
+    flex-direction: column-reverse;
+  }
+}

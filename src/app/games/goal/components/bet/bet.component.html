@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="switcher">
+    <div>
+      <button style="background: rgba(0,0,0,.3);" >Manual</button>
+      <button>Auto</button>
+    </div>
+  </div>
+
+  <div class="bet-amount">
+    <div class="input-wrapper">
+      <label for="bet">bet amount$</label>
+      <div class="background-btn" >
+        <div (click)="minusBet()" [ngStyle]="!betStage && {'pointer-events' : 'none'}" class="minus-btn"></div>
+        <input
+          id="bet"
+          type="number"
+          step="0.1"
+          value="0.10"
+          #betInput
+          [disabled]="!betStage"
+        />
+        <div (click)="addBetPlus()" [ngStyle]="!betStage && {'pointer-events' : 'none'}"  class="plus-btn"></div>
+      </div>
+      <small>{{ warningText }}</small>
+    </div>
+
+    <div class="buttons-group">
+      <div class="row">
+        <button [ngStyle]="!betStage && {'pointer-events' : 'none'}" (click)="addBet(1)">1$</button>
+        <button [ngStyle]="!betStage && {'pointer-events' : 'none'}" (click)="addBet(2)">2$</button>
+      </div>
+      <div class="row">
+        <button [ngStyle]="!betStage && {'pointer-events' : 'none'}" (click)="addBet(5)">5$</button>
+        <button [ngStyle]="!betStage && {'pointer-events' : 'none'}" (click)="addBet(10)">10$</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="field-size">
+    <label>Field size</label>
+    <div class="row1">
+      <div
+        (click)="newVariable(4)"
+        [ngClass]="{'active': variable == 4}"
+        [ngStyle]="!betStage && {'pointer-events' : 'none'}"
+      >
+        small
+      </div>
+      <div [ngStyle]="!betStage && {'pointer-events' : 'none'}" (click)="newVariable(7)" [ngClass]="{'active': variable == 7}">medium</div>
+      <div [ngStyle]="!betStage && {'pointer-events' : 'none'}" (click)="newVariable(10)" [ngClass]="{'active': variable == 10}">Big</div>
+    </div>
+  </div>
+
+  <div class="bigBtn-div">
+    <button class="bigBtn"
+            (click)="onSubmitBet()"
+            [ngClass]="betStage  ? 'bigBtn' : 'disabled'"
+    >
+      {{ betBtnText }}
+    </button>
+  </div>
+</div>
