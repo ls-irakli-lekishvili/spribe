@@ -32,8 +32,7 @@ export class BoardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.money.getBalance().subscribe(el => this.balance = el);
-    this.balance = 1000;
+    this.balance = this.money.balance.value;
     this.setUp();
   }
 
@@ -106,6 +105,7 @@ export class BoardComponent implements OnInit {
     if (Number(this.moneyInput) > this.balance) {
       this.moneyInput = this.balance.toFixed(2);
     }
+    this.firstMove = false;
   }
 
   mpButton(sign: string, call: boolean) {
@@ -188,6 +188,7 @@ export class BoardComponent implements OnInit {
       this.balance += this.currentWin;
       this.finish();
     }
+    this.money.balance.next(this.balance);
   }
 
   openRandomly() {

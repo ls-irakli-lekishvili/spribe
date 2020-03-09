@@ -12,7 +12,7 @@ import {MoneyService} from '../../services/money.service';
 })
 export class HeaderComponent implements OnInit {
   games: Game[];
-  balance: number = 1000;
+  balance: any;
   hov: number;
 
   constructor(private data: HeaderGameDataService,
@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.games = this.data.games;
-    console.log(this.money);
+    this.balance = this.money.balance;
     this. setTheme();
   }
 

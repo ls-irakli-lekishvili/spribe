@@ -12,7 +12,7 @@
 
     <div class="right-nav">
         <div class="balance">
-            <span class="number">{{ balance.toFixed(2) }}</span>
+            <span class="number">{{ balance | async | number: '.2-2' }}</span>
             <span class="currency">$</span>
         </div>
         <div class="right-buttons-group">
