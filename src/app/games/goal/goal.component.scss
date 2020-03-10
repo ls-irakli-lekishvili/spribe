@@ -4,6 +4,7 @@ body {
 
 .container {
   display: flex;
+  width: 950px;
   max-width: 1000px;
   min-width: 320px;
   height: 570px;
@@ -23,5 +24,12 @@ body {
 @media only screen and (max-width: 1024px) {
   .container {
     flex-direction: column-reverse;
+    width: 600px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .container {
+    flex-direction: column-reverse;
+    width: 350px;
   }
 }

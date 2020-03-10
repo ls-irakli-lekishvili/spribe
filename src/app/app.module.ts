@@ -11,6 +11,8 @@ import { ProfilePopUpComponent } from './components/profile-pop-up/profile-pop-u
 import { BetStatsComponent } from './components/bet-stats/bet-stats.component';
 import { UserComponent } from './components/bet-stats/user/user.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import { FooterComponent } from './components/footer/footer.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    MatTabsModule
+    MatTabsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   exports: [
     MatDialogModule,
