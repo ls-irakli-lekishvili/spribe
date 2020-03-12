@@ -26,6 +26,8 @@ export class BetComponent implements OnInit, OnDestroy {
     private betAmmountSub: Subscription;
     public warningText: string;
     public betValue: number;
+    public timeout;
+    public interval;
     @ViewChild('betInput') betInput: ElementRef<HTMLInputElement>;
 
     constructor(private core: coreService, private money: MoneyService) {}
@@ -106,6 +108,21 @@ export class BetComponent implements OnInit, OnDestroy {
             this.betInput.nativeElement.valueAsNumber = bet;
         }
     }
+
+  stopIncrease() {
+    clearTimeout(this.timeout);
+    clearInterval(this.interval);
+  }
+
+  mpButton(sign: string) {
+    if (sign === '+') {
+      this.addBetPlus()
+      this.timeout = setTimeout(() => this.interval = setInterval(() => this.addBetPlus(), 50), 500);
+    } else {
+      this.minusBet()
+      this.timeout = setTimeout(() => this.interval = setInterval(() => this.minusBet(), 50), 500);
+    }
+  }
 
     addBetPlus() {
         new Audio('../../assets/goal/sounds/button_click.mp3').play();

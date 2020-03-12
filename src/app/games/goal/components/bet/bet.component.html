@@ -10,7 +10,7 @@
     <div class="input-wrapper">
       <label for="bet">bet amount$</label>
       <div class="background-btn" >
-        <div (click)="minusBet()" [ngStyle]="!betStage && {'pointer-events' : 'none'}" class="minus-btn"></div>
+        <div (mouseup)="stopIncrease()" (mouseout)="stopIncrease()" (click)="mpButton('-')" [ngStyle]="!betStage && {'pointer-events' : 'none'}" class="minus-btn"></div>
         <input
           id="bet"
           type="number"
@@ -19,7 +19,7 @@
           #betInput
           [disabled]="!betStage"
         />
-        <div (click)="addBetPlus()" [ngStyle]="!betStage && {'pointer-events' : 'none'}"  class="plus-btn"></div>
+        <div (mouseup)="stopIncrease()" (mouseout)="stopIncrease()" (click)="mpButton('+')" [ngStyle]="!betStage && {'pointer-events' : 'none'}"  class="plus-btn"></div>
       </div>
       <small>{{ warningText }}</small>
     </div>

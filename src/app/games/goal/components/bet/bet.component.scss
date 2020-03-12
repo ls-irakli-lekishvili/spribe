@@ -180,7 +180,9 @@ button {
   background: rgba(255,255,255,.26);
 }
 .disabled{
-  opacity: 0.5;
+  background-image: linear-gradient(102deg,#13b7f2,#1390f2);
+  box-shadow: 0 2px 0 0 #0667a1;
+  color: #17284f;
 }
 .active-box {
   cursor: pointer;
